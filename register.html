@@ -93,6 +93,8 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
+    .note a:hover {
+  text-decoration: underline;
   </style>
 </head>
 
@@ -169,10 +171,20 @@
       <button type="submit" class="primary">Sign Up</button>
 
     </form>
-
+                                
     <div class="note">Secure registration | Secure payment</div>
+  
+<div class="note" style="margin-top: 1.2rem;">
+  Already have an account?
+  <a href="login.html" style="
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  ">
+    Login
+  </a>
+</div>
   </div>
-
 <script>
   // password toggle
   document.getElementById("togglePass").onclick = function() {
