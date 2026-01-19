@@ -266,6 +266,89 @@
     setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
   }
 </script>
+<!-- Font Awesome (required for icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<style>
+/* Social Proof Popup Styling */
+.social-proof {
+  position: fixed;
+  bottom: 20px;
+  left: -400px;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #ff0000;
+  backdrop-filter: blur(10px);
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9999;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.social-proof.active {
+  left: 20px;
+}
+
+.proof-icon {
+  color: #25d366;
+  font-size: 18px;
+}
+
+.proof-text {
+  font-size: 12px;
+  color: #eee;
+  line-height: 1.4;
+}
+</style>
+
+<div id="social-proof" class="social-proof">
+  <i class="fa-solid fa-circle-check proof-icon"></i>
+  <div class="proof-text">
+    <span id="p-message">Loading...</span>
+  </div>
+</div>
+
+<script>
+// Random Names
+const names = [
+  "Amanda", "Ade", "Chisom", "Chidi", "Tunde", "Uche", "Blessing", "Musa",
+  "Kwame", "Zainab", "Precious", "Oluwaseun", "Fatima", "Emeka", "Damilola",
+  "Ibrahim", "Chinonso", "Abayomi", "Gift", "Samuel", "Evelyn", "Victor",
+  "Ngozi", "Hassan", "Joy", "Ifeanyi", "Kelechi", "Bisi", "Sani", "Anita"
+];
+
+const proofEl = document.getElementById("social-proof");
+const msgEl = document.getElementById("p-message");
+
+// FIXED FUNCTION (template literals)
+function getAction(name) {
+  const rand = Math.random();
+
+  if (rand < 0.25) return `<b>${name}</b> just registered`;
+  if (rand < 0.50) return `<b>${name}</b> just activated an account`;
+  if (rand < 0.75) return `<b>${name}</b> just placed a withdrawal of $${(Math.random() * 100 + 50).toFixed(0)}`;
+  return `<b>${name}</b> just received funds in their bank account`;
+}
+
+function runSocialProof() {
+  const randomName = names[Math.floor(Math.random() * names.length)];
+  msgEl.innerHTML = getAction(randomName);
+
+  proofEl.classList.add("active");
+
+  setTimeout(() => {
+    proofEl.classList.remove("active");
+  }, 3000);
+}
+
+// Run every 6 seconds
+setInterval(runSocialProof, 6000);
+runSocialProof();
+</script>
 </body>
 </html>
