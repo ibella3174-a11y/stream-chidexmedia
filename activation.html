@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi-Media | Secure Payment</title>
+  <title>Stream | Secure Payment</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -43,7 +43,7 @@
     }
 
     .header img {
-      width: 120px; /* Adjust based on your logo */
+      width: 120px;
       margin-bottom: 10px;
     }
 
@@ -58,8 +58,6 @@
       display: inline-block;
       margin-bottom: 10px;
     }
-
-    /* Timer Section */
     .timer-card {
       background: linear-gradient(145deg, #1e2530, #161b22);
       border: 1px solid rgba(255,255,255,0.1);
@@ -76,8 +74,6 @@
       color: #fff; 
       text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
     }
-
-    /* Alert Box */
     .opay-warning {
       background: rgba(255, 77, 77, 0.1);
       border-left: 4px solid var(--danger);
@@ -87,8 +83,6 @@
       margin-bottom: 20px;
       line-height: 1.5;
     }
-
-    /* Account Details */
     .account-card {
       background: #ffffff;
       color: #000;
@@ -143,8 +137,6 @@
       font-weight: 600;
       opacity: 0.7;
     }
-
-    /* Button */
     .btn-verify {
       display: block;
       width: 100%;
@@ -164,8 +156,6 @@
       transform: translateY(-2px);
       box-shadow: 0 15px 25px rgba(138, 43, 226, 0.4);
     }
-
-    /* Toast Notification */
     #toast {
       visibility: hidden;
       min-width: 200px;
@@ -196,7 +186,7 @@
   <div class="header">
     <div class="secure-badge"><i class="fa-solid fa-shield-halved"></i> Secure Checkout</div>
     <h2 style="margin: 5px 0;">Complete Payment</h2>
-    <p style="font-size: 14px; opacity: 0.7;">Transfer ₦7,500 or ₦14,500 to activate</p>
+    <p style="font-size: 14px; opacity: 0.7;">Transfer ₦12,050 to activate</p>
   </div>
 
   <div class="timer-card">
@@ -210,16 +200,16 @@
   </div>
 
   <div class="account-card">
-    <div class="bank-name">KUDA BANK</div>
+    <div class="bank-name">Moniepoint MFB</div>
     <div class="acc-number-wrap">
-      <span class="acc-number" id="acc_no">3003327013</span>
+      <span class="acc-number" id="acc_no">6555650977</span>
       <i class="fa-solid fa-copy copy-icon" onclick="copyText()"></i>
     </div>
-    <div class="acc-holder">UBONG A. IME</div>
-    <div style="font-size: 11px; margin-top: 5px; color: #666;">CHI-MEDIA OPERATING ACCOUNT</div>
+    <div class="acc-holder">CHIDERA E. EZE</div>
+    <div style="font-size: 11px; margin-top: 5px; color: #666;">STREAM OPERATING ACCOUNT</div>
   </div>
 
-  <a href="https://t.me/Coachyhubee?text=Hi%20CHI-MEDIA,%20I%20have%20paid%20for%20registration%20EPIN" class="btn-verify">
+  <a href="https://t.me/Streamofficial01?text=Hi%20CHI-MEDIA,%20I%20have%20paid%20for%20Account%20Activation" class="btn-verify">
     I HAVE MADE THE TRANSFER
   </a>
 
@@ -231,7 +221,6 @@
 <div id="toast">Account Number Copied!</div>
 
 <script>
-  // Countdown Timer
   let time = 600;
   const display = document.getElementById('countdown');
 
@@ -242,8 +231,6 @@
     display.innerHTML = `${minutes}:${seconds}`;
     if (time > 0) time--;
   }, 1000);
-
-  // Copy Function
   function copyText() {
     const text = document.getElementById('acc_no').innerText;
     navigator.clipboard.writeText(text);
