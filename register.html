@@ -224,9 +224,9 @@
     if (pass.length < 6) { document.getElementById("errPass").style.display = "block"; valid=false; }
     else document.getElementById("errPass").style.display = "none";
 
-    if (!valid) return;
-
-    window.location.href = "Dashboard.html";
+if (!valid) return;
+localStorage.setItem("userFullName", name);
+window.location.href = "Dashboard.html";
   }
   let plan = document.getElementById("plan").value;
 </script>
@@ -234,3 +234,4 @@
 </body>
 
 </html>
+
