@@ -104,6 +104,20 @@ body {
 .gift-icon {
   font-size: 36px;
   color: #f4a622;
+  animation: giftWobble 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes giftWobble {
+  0% { transform: rotate(0deg) scale(1); }
+  10% { transform: rotate(15deg) scale(1.1); }
+  20% { transform: rotate(-15deg) scale(1.1); }
+  30% { transform: rotate(10deg) scale(1.1); }
+  40% { transform: rotate(-10deg) scale(1.1); }
+  50% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+    }
 }
 .actions-title {
   margin-top: 25px;
